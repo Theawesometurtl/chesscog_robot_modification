@@ -49,7 +49,7 @@ There are three methods of installing and running chesscog.
 1. **Using poetry (recommended).**
    Ensure you have [poetry](https://python-poetry.org) installed, then clone this repository, and install the _chesscog_:
    ```bash
-   git clone https://github.com/georgw777/ chesscog.git
+   git clone https://github.com/georg-wolflein/chesscog.git
    cd chesscog
    poetry install
    ```
@@ -57,7 +57,7 @@ There are three methods of installing and running chesscog.
 2. **Using pip.**
    This option will install _chesscog_ locally on your machine using pip (without a virtual environment).
    ```bash
-   git clone https://github.com/georgw777/ chesscog.git
+   git clone https://github.com/georg-wolflein/chesscog.git
    cd chesscog
    pip install .
    ```
@@ -72,7 +72,7 @@ There are three methods of installing and running chesscog.
    Then, run the image using:
 
    ```bash
-   docker run -it -p 8888:8888 -p 9999:9999 chesscog
+   PWD=$(pwd); docker run -it -p 8888:8888 -p 9999:9999 -v $PWD/config:/config -v $PWD/runs:/chess/runs -v $PWD/results:/chess/results -v $PWD/models:/chess/models chesscog
    ```
 
    Open a browser to [http://localhost:8888](http://localhost:8888) which will display Jupyter lab running in the Docker container (the password is `chesscog`). Simply open a terminal in Jupyter lab and run the remaining instructions in this README.
